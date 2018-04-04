@@ -7,14 +7,12 @@ extend Concerns::Findable
 
   def initialize(name, artist = nil, genre = nil)
     @name = name
-=begin
     if genre
       self.genre=(genre)
     end
     if artist
       self.artist=(artist)
     end
-=end
   end
 
   def self.new_from_filename(file_name)
