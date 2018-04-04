@@ -5,7 +5,7 @@ extend Concerns::Findable
 
 # Constructors
 
-  def initialize(name, artist = nil, genre = nil)
+  def initialize(name)
     @name = name
     if genre
       self.genre=(genre)
