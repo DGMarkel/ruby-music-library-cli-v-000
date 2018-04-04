@@ -7,8 +7,14 @@ extend Concerns::Findable
 
   def initialize(name)
     @name = name
-    self.artist = artist if artist
-    self.genre = genre if genre
+=begin
+    if genre
+      self.genre=(genre)
+    end
+    if artist
+      self.artist=(artist)
+    end
+=end
   end
 
   def self.new_from_filename(file_name)
@@ -27,7 +33,7 @@ extend Concerns::Findable
   # Custom Setters
 
   def artist=(artist)
-    @artist = artist
+    @artist = Artist.find_or_create_by_name(artist)
     @artist.add_song(self)
   end
 
