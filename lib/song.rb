@@ -31,7 +31,7 @@ extend Concerns::Findable
   end
 
   # Custom Setters
-=begin
+
   def artist=(artist)
     @artist = Artist.find_or_create_by_name(artist)
     @artist.add_song(self)
@@ -41,7 +41,6 @@ extend Concerns::Findable
     @genre = Genre.find_or_create_by_name(genre)
     @genre.songs << self if !@genre.songs.include?(self)
   end
-=end
 
 # Class Methods
 
